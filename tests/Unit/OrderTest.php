@@ -11,12 +11,12 @@ class OrderTest extends TestCase
 
     public function setUp(): void
     {
-        $order = new Order();
+        $this->order = new Order();
         $product1 = new Product('Keyboard', 20, 'Keyboard description');
         $product2 = new Product('Monitor', 200, 'Monitor description');
 
-        $order->add($product1);
-        $order->add($product2);
+        $this->order->add($product1);
+        $this->order->add($product2);
     }
 
     public function testAnOrderConsistsOfProducts()
