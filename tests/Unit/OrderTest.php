@@ -25,6 +25,6 @@ class OrderTest extends TestCase
     }
 
     public function testAnOrderCanDetermineTotalCostOfAllProducts(){
-        $this->assertEquals(220, $this->order->total());
+        $this->assertEquals(250, $this->order->total());
     }
 }
