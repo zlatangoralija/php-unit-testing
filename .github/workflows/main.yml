@@ -32,14 +32,14 @@ jobs:
         run: |
           php artisan cache:clear
           php artisan config:clear
-        - name: Migrate database
-          env:
-            B_CONNECTION: mysql
-            DB_DATABASE: db_test
-            DB_PORT: 33306
-            DB_USER: root
-            DB_PASSWORD: secret
-          run: php artisan migrate
+      - name: Migrate database
+        env:
+          B_CONNECTION: mysql
+          DB_DATABASE: db_test
+          DB_PORT: 33306
+          DB_USER: root
+          DB_PASSWORD: secret
+        run: php artisan migrate
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
           DB_CONNECTION: mysql
