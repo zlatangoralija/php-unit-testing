@@ -15,7 +15,6 @@ class ArticleTest extends TestCase
 
     public function testFetchesTrendingArticles()
     {
-
         factory(Article::class, 3)->create();
 
         factory(Article::class, 2)->create([
