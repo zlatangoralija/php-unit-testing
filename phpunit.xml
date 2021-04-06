@@ -32,6 +32,7 @@
         <server name="DB_USERNAME" value="root"/>
         <server name="DB_DATABASE" value="testing_database"/>
         <server name="DB_HOST" value="127.0.0.1" />
-        <server name="DB_PORT" value="3306" />
+        <server name="DB_PASSWORD" value="secret" />
+        <server name="DB_PORT" value="33306" />
     </php>
 </phpunit>
