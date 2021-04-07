@@ -39,3 +39,10 @@ $factory->define(\App\Team::class, function (Faker $faker) {
         'size' => 5
     ];
 });
+
+$factory->define(\App\Post::class, function (Faker $faker) {
+    return [
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph,
+    ];
+});
