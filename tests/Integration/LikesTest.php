@@ -15,16 +15,11 @@ class LikesTest extends TestCase
     public function setUp(): void
     {
         parent::setup();
-        $this->user = factory(User::class)->create();
+        $this->singIn();
         $this->post = factory(Post::class)->create(['user_id' => $this->user->id]);
     }
 
     public function testAUserCanLikeAPost(){
-
-
-        //Set authenticated user in the test
-        $this->actingAs($this->user);
-
         $this->post->like();
 
         //Verify that the user indeed liked a test
@@ -38,9 +33,6 @@ class LikesTest extends TestCase
     }
 
     public function testAUserCanUnlikeAPost(){
-        //Set authenticated user in the test
-        $this->actingAs($this->user);
-
         $this->post->like();
         $this->post->unlike();
 
@@ -55,10 +47,6 @@ class LikesTest extends TestCase
     }
 
     public function testAUserCanToggleAPostLikeStatus(){
-
-        //Set authenticated user in the test
-        $this->actingAs($this->user);
-
         $this->post->toggle();
         $this->assertTrue($this->post->isLiked());
 
@@ -67,9 +55,6 @@ class LikesTest extends TestCase
     }
 
     public function testAPostKnowsHowManyLikesItHas(){
-        //Set authenticated user in the test
-        $this->actingAs($this->user);
-
         $this->post->toggle();
         $this->assertEquals(1, $this->post->likesCount);
     }
