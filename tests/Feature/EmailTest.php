@@ -30,4 +30,9 @@ class EmailTest extends TestCase
 
         //this->seeEmailWasNotSent();
     }
+
+    public function testSeeEmailCanBeSentThroughRoute(){
+        $this->get('/');
+        $this->seeEmailWasSent();
+    }
 }

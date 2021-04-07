@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    Mail::raw('Test email', function ($message){
+        $message->to('foo@bar.com');
+        $message->from('bar@foo.com');
+    });
+
+    return 'Email sent';
 });
 
 Route::get('/feedback', function () {
