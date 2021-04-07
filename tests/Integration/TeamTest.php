@@ -90,4 +90,9 @@ class TeamTest extends TestCase
 
         $this->assertEquals(1, $this->team3->count());
     }
+
+    public function testWhenAddingManyMembersAtOnceYouStillMayNotExceedTheTeamMaximumSize(){
+        $this->expectException('Exception');
+        $this->team2->add($this->users2);
+    }
 }
