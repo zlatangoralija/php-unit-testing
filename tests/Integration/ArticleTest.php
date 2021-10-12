@@ -33,7 +33,7 @@ class ArticleTest extends TestCase
 
     public function testArticleCanBeCreated()
     {
-        $article = factory(Article::class)->create();
-        $this->assertCount(1, $article);
+        $article = factory(Article::class, 2)->create();
+        $this->assertCount(2, $article);
     }
 }
