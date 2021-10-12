@@ -1,4 +1,4 @@
 
 ## Laravel testing automation
 
-TODO: Add readme
+This project serves as an example app for practicing unit-testing and running the tests via GitHub Actions.
