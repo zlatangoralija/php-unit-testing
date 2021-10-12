@@ -30,4 +30,10 @@ class ArticleTest extends TestCase
         $this->assertEquals($mostPopular[0]->id, $articles->first()->id);
         $this->assertCount(3, $articles);
     }
+
+    public function testArticleCanBeCreated()
+    {
+        $article = factory(Article::class)->create();
+        $this->assertCount(1, $article);
+    }
 }
